@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Local Log Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Local Log Analyzer</h1>
+      <p class="sub">Offline security analysis with a local language model</p>
+    </div>
+    <div id="sys" class="sys">Connecting…</div>
+  </header>
+
+  <main>
+    <section class="card" id="setup">
+      <h2>1 · Upload a log</h2>
+      <label id="drop" class="drop">
+        <input type="file" id="file" accept=".log,.txt" hidden />
+        <span id="dropText">Drop a <b>.log</b> or <b>.txt</b> file here, or click to choose</span>
+      </label>
+      <div id="uploadInfo" class="muted"></div>
+      <div class="row">
+        <label>Model
+          <select id="model"></select>
+        </label>
+        <button id="start" disabled>Start analysis</button>
+      </div>
+      <div id="setupErr" class="err"></div>
+    </section>
+
+    <section class="card hidden" id="progressCard">
+      <div class="row between">
+        <h2>2 · Progress <span id="jobStatus" class="pill"></span></h2>
+        <button id="cancel" class="ghost">Cancel</button>
+      </div>
+      <div class="bar"><div id="barFill"></div></div>
+      <div id="progressText" class="muted"></div>
+      <div id="parts" class="parts" title="One square per part sent to the model"></div>
+      <details>
+        <summary>Activity log</summary>
+        <pre id="events"></pre>
+      </details>
+    </section>
+
+    <section class="card hidden" id="reportCard">
+      <div class="row between">
+        <h2>3 · Report</h2>
+        <a id="download" class="btn ghost" href="#">Download JSON</a>
+      </div>
+      <div id="counts" class="counts"></div>
+      <p id="summary" class="summary"></p>
+      <ul id="priorities"></ul>
+      <div id="meta" class="muted small"></div>
+      <h3>Linked incidents <span class="muted small">(all activity per source, in file order)</span></h3>
+      <div id="incidents"></div>
+      <h3>Findings</h3>
+      <div id="findings"></div>
+    </section>
+
+    <section class="card">
+      <h2>Previous jobs</h2>
+      <div id="jobs" class="muted">None yet</div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

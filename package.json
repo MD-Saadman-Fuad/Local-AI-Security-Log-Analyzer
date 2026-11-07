@@ -1,0 +1,21 @@
+{
+  "name": "local-log-analyzer",
+  "version": "1.0.0",
+  "description": "Local-AI security log analyzer: token-aware chunking, cross-chunk correlation, offline LLM (llama.cpp via node-llama-cpp).",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node --max-old-space-size=512 src/server.js",
+    "download-model": "node scripts/download-model.js",
+    "test": "node --test test/*.test.js",
+    "smoke": "node scripts/smoke.js samples/Cultive8_Workspace_Agrigen_Server.log"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.22.3",
+    "node-llama-cpp": "3.22.3"
+  }
+}

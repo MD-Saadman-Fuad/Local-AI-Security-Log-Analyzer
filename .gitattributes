@@ -1,0 +1,5 @@
+# Normalize line endings for source files
+* text=auto eol=lf
+
+# Keep the sample log byte-for-byte (line numbers and byte offsets must not change)
+*.log -text

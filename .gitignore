@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Model weights (1+ GB each) — downloaded with `npm run download-model`
+models/*
+!models/.gitkeep
+
+# Runtime data: uploads, job checkpoints, reports, server logs
+data/
+
+# Log files (the sample in samples/ is kept on purpose)
+*.log
+!samples/*.log
+
+# Partial downloads / temp files
+*.part
+*.tmp
+
+# Environment / secrets
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# Debug output
+npm-debug.log*
+coverage/
