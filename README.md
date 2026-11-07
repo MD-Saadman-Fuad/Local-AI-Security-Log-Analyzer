@@ -11,8 +11,7 @@ upload ──► plan (token-aware split) ──► for each part:              
                                           validate ─► merge ─► checkpoint        parts          model call)
 ```
 
-**Documents:** [User manual](USER_MANUAL.md) · [AI usage & prompts](AI_USAGE.md) ·
-[Presentation script](SCRIPT.md) · Demo video: _add link here_
+**Documents:** [AI usage & prompts](AI_USAGE.md) · Demo video: _add link here_
 
 ## Setup
 
