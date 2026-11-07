@@ -31,3 +31,6 @@ desktop.ini
 # Debug output
 npm-debug.log*
 coverage/
+
+SCRIPT.md
+USER_MANUAL.md
